@@ -1,16 +1,18 @@
 from GRASP import grasp
+import numpy as np
+drive.mount('/content/drive')
 
-matrix =np.array([[-400, 200, 200, 200, 40, 75, 200, 16, 30],
-                  [200, -400, 200, 40, 200, 65, 16, 200, 26],
-                  [200, 200, -400, 75, 65, 200, 30, 26, 200],
-                  [200, 40, 75, -400, 200, 200, 200, 24, 45],
-                  [40, 200, 65, 200, -400, 200, 24, 200, 39],
-                  [75, 65, 200, 200, 200, -400, 45, 39, 200],
-                  [200, 16, 30, 200, 24, 45, -400, 200, 200],
-                  [16, 200, 26, 24, 200, 39, 200, -400, 200],
-                  [30, 26, 200, 45, 39, 200, 200, 200, -400]])
+# Instance
+file_name = 'data/GQAP_instances/20-15-35.txt'
+optimal = 1471896
+in_file = open(file_name)
 
-optimal = -940
+lines = in_file.read().replace('\n', '').split('$')
+n, m = [int(x) for x in lines[0].split()]
+lines = lines[1:]
+matrix = np.array([[float(x) for x in matrix_row.split()] for matrix_row in lines[n*m:] if matrix_row!=''])
+print(matrix)
+
 criteria = grasp.MultipleCriterion(
             [
              #grasp.PercentageDeviation(opt=optimal),
