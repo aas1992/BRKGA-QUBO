@@ -1,4 +1,4 @@
-import grasp
+from GRASP import grasp
 
 matrix =np.array([[-400, 200, 200, 200, 40, 75, 200, 16, 30],
                   [200, -400, 200, 40, 200, 65, 16, 200, 26],
