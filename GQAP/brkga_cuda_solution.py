@@ -3,7 +3,7 @@ import numpy as np
 
 
 # Instance
-file_name = 'GQAP/GQAP_instances/20-15-35.txt'
+file_name = 'data/GQAP_instances/20-15-35.txt'
 obj = 1471896
 #print(file_name[-12:-4])
 in_file = open(file_name)
